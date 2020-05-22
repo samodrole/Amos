@@ -166,6 +166,7 @@ const loadMoreSectionButton = document.querySelector('.loadMoreSection button');
 const sortDescButton = document.querySelector('.sortDesc');
 const sortAscButton = document.querySelector('.sortAsc');
 const clearSortingButton = document.querySelector('.clearSorting');
+const popularityNo = document.querySelector('.popularity span');
 let genresArr = [];
 let popularArr = [];
 let upcomingArr = [];
@@ -491,6 +492,7 @@ function openModal() {
   movieTitle.innerHTML = `${curentView[movieIndex].title} <span>(${curentView[movieIndex].release_date.split('-')[0]})</span>`;
   movieOverview.textContent = curentView[movieIndex].overview;
   genreTags.textContent = curentView[movieIndex].genres.join(' / ');
+  popularityNo.textContent = curentView[movieIndex].vote_average;
   isFave(); // console.log(movieIndex)
   // console.log(curentView.length - 1)
 
