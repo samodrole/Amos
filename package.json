@@ -1,0 +1,21 @@
+{
+  "name": "amos",
+  "version": "1.0.0",
+  "description": "Database for movies",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.generalassemb.ly/samodrole/Amos.git"
+  },
+  "author": "Samo Drole",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ]
+}
