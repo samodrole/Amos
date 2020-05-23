@@ -532,7 +532,7 @@ p {
   height: 50px;
   background-color: var(--Bgcolor100);
   border: 2px solid var(--color20);
-  box-shadow: 5px 5px 0px 0 var(--color20);
+  box-shadow: 4px 4px 0px 0 var(--color20);
   top: calc(50% - 25px);
   cursor: pointer;
   outline: 0;
@@ -555,7 +555,7 @@ p {
 }
 .prevMovie {
   left: -85px;
-  box-shadow: -5px 5px 0px 0 var(--color20);
+  box-shadow: -4px 4px 0px 0 var(--color20);
 }
 .nextMovie {
   right: -85px;
@@ -571,7 +571,7 @@ p {
 .card img {
   width: 100%;
   height: auto;
-  box-shadow: 5px 5px 0px 0 var(--color20);
+  box-shadow: 6px 6px 0px 0 var(--color20);
 }
 
 .movieInfo {
