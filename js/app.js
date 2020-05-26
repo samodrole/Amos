@@ -269,14 +269,20 @@ function reCreateList(data) {
 // Sort elements
 //////////////////////////
 function sortFn(direction, key, curentView) {
+  const regEx = /^(a |an |the |\d{2,} )/i
   tempSorted = 0
   tempSorted = [...curentView];
-  
+
+  function titleReplace(title) {
+    return title.replace(regEx, '').trim();
+  }
+
   if(direction === 'desc') {
-    tempSorted = tempSorted.sort((a,b) => a[key] < b[key] ? 1 : -1)
+    tempSorted = tempSorted.sort((a,b) => titleReplace(a[key]) < titleReplace(b[key]) ? 1 : -1)
+    console.log(tempSorted)
     reCreateList(tempSorted)
   } else {
-    tempSorted = tempSorted.sort((a,b) => a[key] < b[key] ? -1 : 1)
+    tempSorted = tempSorted.sort((a,b) => titleReplace(a[key]) < titleReplace(b[key]) ? -1 : 1)
     reCreateList(tempSorted)
   }
 }
@@ -524,14 +530,14 @@ loadMoreButton.addEventListener('click', () => {
 })
 
 sortDescButton.addEventListener('click', () => {
-  sortFn('desc', 'original_title', curentView)
+  sortFn('desc', 'title', curentView)
   sortAscButton.classList.remove('active')
   sortDescButton.classList.add('active')
   clearSortingButton.classList.remove('active')
 })
 
 sortAscButton.addEventListener('click', () => {
-  sortFn('asc', 'original_title', curentView)
+  sortFn('asc', 'title', curentView)
   sortAscButton.classList.add('active')
   sortDescButton.classList.remove('active')
   clearSortingButton.classList.remove('active')
